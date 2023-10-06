@@ -1,0 +1,66 @@
+---
+import "../css/generalstyle.css";
+import MainLayout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const response = await fetch("https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/speakersntalks", {
+		method:"GET",
+		headers: {
+			apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoZmpwaGp6Z2F4d3ZtaWJveWhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYzMjEwNTAsImV4cCI6MjAxMTg5NzA1MH0.UcoT8cKIOL89hswLUhzwZsDdf-_Rrvusn-9O08NTxAI"
+	}});
+	const data = await response.json();
+	 console.log(data);
+
+const { speaker } = Astro.props;
+
+---
+<MainLayout title="Schedule">
+
+	<details><summary>Debugger</summary>
+		<debug {data} />
+	   </details>
+
+	<body>
+		<header>
+
+		</header>
+		<main>
+			<ul>
+				<li><a href="/speaker/alanmckenzie">Alan McKenzie</a></li>
+				<li><a href="/speaker/amirsherman">Amir Sherman</a></li>
+					<li><a href="/speaker/biancazhang">Bianca Zhang</a></li>
+					<li><a href="/speaker/brunoramos">Bruno Ramos</a></li>
+					<li><a href="/speaker/catrinaallen">Catrina Allen</a></li>
+					<li><a href="/speaker/felipemarquez">Felipe Marquez</a></li>
+					<li><a href="/speaker/ivanazavala">Ivana Zavala</a></li>
+					<li><a href="/speaker/jacobbenjamin">Jacob Benjamin</a></li>
+					<li><a href="/speaker/liyu">Dr. Li Yu</a></li>
+					<li><a href="/speaker/mariadibiaggio">Maria Di Biaggio</a></li>
+					<li><a href="/speaker/mileswise">Miles Wise</a></li>
+					<li><a href="/speaker/mollyfinkleton">Molly Finkleton</a></li>
+					<li><a href="/speaker/nathaniellombardy">Nathaniel Lombardy</a></li>
+					<li><a href="/speaker/racheldelavega">Rachel de la Vega</a></li>
+					<li><a href="/speaker/saramuller">Sara Müller</a></li>
+					<li><a href="/speaker/simonedevantier">Simone Devantier</a></li>
+				</li>
+			</ul>
+			<!-- <a href=`speaker/${speaker.slug}`>Singleview</a> -->
+			
+
+
+			{
+				data.map((product) => {
+				  return <Card  obj={product}/> ;
+				})
+			  }
+
+		</main>
+		<footer>
+
+		</footer>
+	</body>
+</Mainlayout>
+
+	
+
+
