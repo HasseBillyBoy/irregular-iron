@@ -4,54 +4,190 @@ import "../css/generalstyle.css";
 const { obj } = Astro.props;
 ---
 
+<button data-modal-target="#modal">Open modal</button>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title"></div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="grid1-2">
+        <div>
+          <img src={obj.speakerimage} alt="">
+          <h2>{obj.speakername}</h2>
+          <h3>{obj.speakertitle}</h3>
+        </div>
+        <div class="modal-body">
+          <h4><i>{obj.talktitle}</i></h4>
+          <h5>{obj.timeslot}</h5>
+          <p>{obj.talkdescription}</p>
+        </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+
 <li class="link-card">
-	
 		<h2>{obj.speakername}</h2>
-		<p>{obj.speakertitle}</p>
-		<img src={obj.speakerimage} alt="">
 </li>
 
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		color: var(--quarternary);
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-	li{
-		color:white;
-	}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(4, 39, 37);
+}
+
+.grid1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+img {
+  padding: 10px;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px 10px;
+  font-size: 18px;
+  color: rgb(255, 90, 67);
+}
+
+h3 {
+  margin-top: 0px;
+  padding: 0px 10px;
+  font-size: 12px;
+  color: rgb(18, 179, 170);
+}
+
+h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 25px;
+  color: rgb(255, 90, 67);
+}
+
+h5 {
+  margin-top: 0px;
+  font-size: 14px;
+  color: rgb(18, 179, 170);
+}
+
+p {
+  color: #d2d2d2;
+}
+
+.modal {
+  position: fixed;
+  /* overlayet bliver i midten af vinduet hvis brugeren scroller */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  /* for at placere overlayet i midten, placerer vi først det venstre hjørne på boksen i centrum af skærmen.
+  Derefter translater vi så det er midten på x-aksen og midten på y-aksen der skal være i centrum af skærmen. */
+  transition: 200ms ease-in-out;
+  border: 2px solid rgb(255, 90, 67);
+  border-radius: 10px;
+  z-index: 10;
+  background-color: rgb(4, 39, 37);
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid black; */
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: rgb(255, 90, 67);
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: rgb(18, 179, 170);
+}
+
+.modal-body {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: rgb(239, 239, 239);
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  /*vises ikke pr default */
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  /* overlay aktivt = du kan ikke interagere med baggrund */
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
 </style>
+
+<script>
+const openModalButtons = document.querySelectorAll("[data-modal-target]");
+const closeModalButtons = document.querySelectorAll("[data-close-button]");
+const overlay = document.getElementById("overlay");
+
+openModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = document.querySelector(button.dataset.modalTarget);
+    openModal(modal);
+  });
+});
+
+overlay.addEventListener("click", () => {
+  const modals = document.querySelectorAll(".modal.active");
+  modals.forEach((modal) => {
+    closeModal(modal);
+  });
+});
+
+closeModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".modal");
+    closeModal(modal);
+  });
+});
+
+function openModal(modal) {
+  if (modal == null) return;
+  modal.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function closeModal(modal) {
+  if (modal == null) return;
+  modal.classList.remove("active");
+  overlay.classList.remove("active");
+}
+</script>

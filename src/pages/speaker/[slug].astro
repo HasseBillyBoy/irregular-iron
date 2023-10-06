@@ -21,21 +21,63 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 ---
 
-
-<img src={post.speakerimage} alt="">
-<h1>{post.speakername}</h1>
-<h2>{post.speakertitle}</h2>
-<h3>{post.talktitle}</h3>
-<h4>{post.talktimeslot}</h4>
-<p>{post.talkdescription}</p>
+<div class="container">
+  <div>
+    <img src={post.speakerimage} alt="">
+    <h1>{post.speakername}</h1>
+    <h2>{post.speakertitle}</h2>
+  </div>
+  <div>
+    <h3>{post.talktitle}</h3>
+    <h4>{post.talktimeslot}</h4>
+    <p>{post.talkdescription}</p>
+  </div>
+</div>
 
 <style>
+html {
+  --primary: #042725;
+  --secondary: #ff5a43;
+  --tertiary: #12b3aa;
+  --quarternary: #d2d2d2;
+}
+
+.container {
+  background-color: var(--primary);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
   img {
+    padding: 10px;
+    max-width: 100%;
     border-radius: 50%;
   }
 
   h1 {
-    
+    color: var(--secondary);
+    font-size: 40px;
   }
+
+  h3 {
+    color: var(--secondary);
+    font-size: 50px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    color: var(--tertiary);
+  }
+
+  h4 {
+    color: var(--tertiary);
+    font-size: 20px;
+    margin-top: 0px;
+  }
+
+  p {
+    color: var(--quarternary);
+  }
+
+
 
 </style>
