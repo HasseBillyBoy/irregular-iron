@@ -26,9 +26,13 @@ const { speaker } = Astro.props;
 
 		</header>
 		<main>
-			<ul>
-				<li><a href="/speaker/alanmckenzie">Alan McKenzie</a></li>
-				<li><a href="/speaker/amirsherman">Amir Sherman</a></li>
+		<h1>Schedule</h1>
+		<button class="accordion">Saturday 20th</button>
+		<div class="panel">
+			<section class="grid_1-1">
+				<ul>
+					<li><a href="/speaker/alanmckenzie">Alan McKenzie</a></li>
+					<li><a href="/speaker/amirsherman">Amir Sherman</a></li>
 					<li><a href="/speaker/biancazhang">Bianca Zhang</a></li>
 					<li><a href="/speaker/brunoramos">Bruno Ramos</a></li>
 					<li><a href="/speaker/catrinaallen">Catrina Allen</a></li>
@@ -45,6 +49,7 @@ const { speaker } = Astro.props;
 					<li><a href="/speaker/simonedevantier">Simone Devantier</a></li>
 				</li>
 			</ul>
+		</section>
 			<!-- <a href=`speaker/${speaker.slug}`>Singleview</a> -->
 			
 
@@ -56,8 +61,59 @@ const { speaker } = Astro.props;
 			  }
 
 		</main>
-		<Footer />
+	<style>
+		h1 {
+			color: rgb(255, 90, 67);
+			text-align: center;
+			font: font-family: 'Roboto Condensed', sans-serif;
+		}
+		.accordion {
+			background-color: #fab3b2;
+			color: white;
+			cursor: pointer;
+			padding: 18px;
+			width: 55%;
+			text-align: center;
+			border: none;
+			outline: none;
+			transition: 0.4s;
+			margin-left: 25%;
+			font-family: 'Quicksand', sans-serif;
+			font-size: 20px;
+		}
+			button.active, .accordion:hover {
+				background-color: #AF5351;
+			}
+			.panel {
+				background-color: #EBF6FF;
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.2s ease-out;
+			}
+			.panel p{
+				width: 45%;
+				font-size: 18px;
+			
+			}
+			</style>
+			<script>
+				var acc = document.getElementsByClassName("accordion");
+				var i;
+			
+				for (i = 0; i < acc.length; i++) {
+				  acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+				if (panel.style.maxHeight) {
+				  panel.style.maxHeight = null;
+				} else {
+				  panel.style.maxHeight = panel.scrollHeight + "px";
+				} 
+			  });
+			}
+			</script>
 	</body>
+
 </Mainlayout>
 
 	
