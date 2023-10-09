@@ -1,0 +1,71 @@
+---
+import Button from "./Button.astro";
+import Nav from "../components/Nav.astro";
+const { imgsrc, conf, tema, dato, ticketbutton } = Astro.props;
+---
+
+<section>
+    <Nav />
+  <h3>Conference</h3>
+  <h1>DEGROWTH & CONSUMERISM</h1>
+  <h2>March 20 - 21, 2024</h2>
+  <h4>BUY TICKETS</h4>
+</section>
+
+<style>
+    section {
+        background-image: url(src/images/bannerbackground.webp);
+        aspect-ratio: 16/9;
+        margin: -7px;
+        padding: 0px;
+       
+
+    }
+  h1 {
+    color: #ff5a43;
+    font-size: 60px;
+    text-align: center;
+    margin-top: -1%;
+    margin-bottom: 2%;
+  }
+
+  h2 {
+    color: #12b3aa;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  h3 {
+    color: #d2d2d2;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 15%;
+    
+
+    
+  }
+
+  h4 {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: #042725;
+    color: #ff5a43;
+    text-decoration: none;
+    font-size: 30px;
+    border-radius: 30px;
+    outline-style: solid;
+    outline-color: #d2d2d2;
+    margin-left: 39%;
+    max-width: fit-content;
+  }
+
+/*.bannerimg {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: url(src/images/bannerbackground.webp);
+    aspect-ratio: 16/9;
+    
+  }*/
+</style>

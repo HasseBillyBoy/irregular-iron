@@ -1,0 +1,53 @@
+---
+const { header, important, infotext } = Astro.props;
+---
+
+<article>
+  <h2>Information</h2>
+  <div class="divider">
+    <h3>March 20th - 21st, 2024</h3>
+    <p>10.00 - 19.00 GMT</p>
+  </div>
+  <div class="divider">
+    <h3>Big Bio Nordhavn</h3>
+    <p>Hamborg Plads 6, 2150 København</p>
+  </div>
+  <div class="divider">
+    <h3>20+ speakers</h3>
+    <p>Hybrid conference, live & virtual</p>
+  </div>
+  <div class="divider"></div>
+</article>
+
+<style>
+    article {
+        padding-top: 10%;
+        padding-left: 15%;
+    }
+  h2 {
+    color: #d2d2d2;
+    font-size: 30px;
+  }
+
+  h3 {
+    color:#ff5a43;
+    font-size: 25px;
+    word-spacing: 10px;
+    
+  }
+
+  p {
+    color: #12b3aa;
+    font-size: 18px;
+  }
+
+  .divider {
+    border-top: 1px solid #EFEFEF;
+    width: 70%;
+    
+  }
+
+
+
+  
+</style>

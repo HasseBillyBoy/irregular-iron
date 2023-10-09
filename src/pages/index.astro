@@ -4,29 +4,45 @@ import { Debug } from "astro/components";
 import MainLayout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Banner from "../components/Banner.astro";
+import Info from "../components/Info.astro";
+import Morethanaconference from "../components/Morethanaconference.astro";
+import Background from "../components/Background.astro";
 ---
 
 <MainLayout title="LandingPage">
-		<header>
-			<Nav />
-		</header>
+  
 
-		<main>
-			<section class="banner">
-				<h3>Conference</h3>
-				<h1>Degrowth & Consumerism</h1>
-				<h2>March 20 - 21, 2024</h2>
-				<!-- en button-komponent -->
-				<!-- nedad pil - som knap? -->
-			</section>
-			<section>
-				<article class=info>
-					<div class=information></div>
-				</article>
-				<article>
-					<div class=morethanaconference></div>
-				</article>
-			</section>
-			<Footer />
-		</main>
+	<header>
+
+  </header>
+
+  <main>
+	<!-- <Background/> -->
+	<Banner/>
+   <section>
+    
+      
+      <!-- en button-komponent -->
+      <!-- nedad pil - som knap? -->
+    </section>
+    <section class="grid_1-1">
+      <Info />
+	  <Morethanaconference />
+    </section>
+	<Footer />
+  </main>
+
 </MainLayout>
+
+<style>
+	.grid_1-1 {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 1fr 1fr;
+  grid-column: auto;
+ /* margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 2em;*/
+}
+</style>
