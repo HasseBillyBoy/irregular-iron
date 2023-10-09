@@ -4,7 +4,7 @@ import "../css/generalstyle.css";
 const { obj } = Astro.props;
 ---
 
-<button data-modal-target="#modal">Open modal</button>
+<button data-modal-target="#modal">{obj.speakername}</button>
     <div class="modal" id="modal">
       <div class="modal-header">
         <div class="title"></div>
