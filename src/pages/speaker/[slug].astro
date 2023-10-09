@@ -1,4 +1,5 @@
 ---
+
 export async function getStaticPaths() {
     const url = "https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/speakersntalks";
 
@@ -28,7 +29,7 @@ const { post } = Astro.props;
     <h3>{post.speakertitle}</h3>
   </div>
   <div class=right>
-    <h4><i>{post.talktitle}</i></h4>
+    <h4>{post.talktitle}</h4>
     <h5>{post.timeslot}</h5>
     <p>{post.talkdescription}</p>
   </div>
@@ -40,6 +41,11 @@ html {
   --secondary: #ff5a43;
   --tertiary: #12b3aa;
   --quarternary: #d2d2d2;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
 }
 
 .container {
@@ -80,6 +86,7 @@ h3 {
 }
 
 h4 {
+  font-family: 'Roboto';
   margin-bottom: 0px;
   margin-top: 0px;
   font-size: 25px;
@@ -93,9 +100,8 @@ h5 {
 }
 
 p {
+  font-family: 'Roboto';
   color: #d2d2d2;
 }
-
-
 
 </style>

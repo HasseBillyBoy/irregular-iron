@@ -4,3 +4,10 @@ html {
   --tertiary: #12b3aa;
   --quarternary: #d2d2d2;
 }
+
+/* import af fonts */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+}
