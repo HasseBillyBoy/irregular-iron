@@ -8,6 +8,21 @@ html {
 /* import af fonts */
 
 @font-face {
-  font-family: "Roboto";
-  src: url("/src/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+  font-family: "Roboto-Italic";
+  src: url("../fonts/Roboto/Roboto-Italic.ttf");
+}
+
+@font-face {
+  font-family: "RobotoCondensed-Regular";
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Mono";
+  src: url("../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu-Mono";
+  src: url("../fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf");
 }
