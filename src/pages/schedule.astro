@@ -4,7 +4,7 @@ import MainLayout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 
-const response = await fetch("https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/speakersntalks", {
+const response = await fetch("https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/speakersntalks?order=order.asc", {
 		method:"GET",
 		headers: {
 			apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoZmpwaGp6Z2F4d3ZtaWJveWhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYzMjEwNTAsImV4cCI6MjAxMTg5NzA1MH0.UcoT8cKIOL89hswLUhzwZsDdf-_Rrvusn-9O08NTxAI"
@@ -38,9 +38,18 @@ const {speaker} = Astro.props;
 				</article>
 				
 				<article>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">10:30 GMT 45 min</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/nathaniellombardy">"Content and Sustainability: Crafting Engaging, Eco-Friendly Narratives"</a></li>
+						<li><a href="/speaker/jacobbenjamin">Jacob Benjamin</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/liyu">"How Might We Calculate Digital Emissions?"</a></li>
+						<li><a href="/speaker/liyu">Dr. Li Yu</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/simonedevantier">"Sustainable Website Fonts and The Proper Use of Them"</a></li>
+						<li><a href="/speaker/simonedevantier">Simone Devantier</a></li>
+					</div>
 				</article>
 			</section>
 				
@@ -54,9 +63,18 @@ const {speaker} = Astro.props;
 				</article>
 					
 				<article>
-					<div class="grid-item-1_1">09:30 GMT 15 min</div>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">10:30 GMT 45 min</div>
+					<div class="grid-item-1_1">
+						<li><a href="/speaker/nathaniellombardy"></a>"Green Code: Engineering a Sustainable Software Ecosystem"</a></li>
+						<li><a href="/speaker/nathaniellombardy">Nathaniel Lombardy</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/mileswise">"Designing User-Centric Sustainable Experiences: Best Practices"</a></li>
+						<li><a href="/speaker/mileswise">Miles Wise</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/ivanazavala">"Ethical Considerations in Sustainable Digital Design"</a></li>
+						<li><a href="/speaker/ivanazavala">Ivana Zavala</a></li>
+					</div>
 				</article>
 			</section>
 				
@@ -69,8 +87,14 @@ const {speaker} = Astro.props;
 				</article>
 
 				<article>
-					<div class="grid-item-1_1">09:30 GMT 15 min</div>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
+					<div class="grid-item-1_1">
+						<li><a href="/speaker/catrinaallen">"Data-Driven Insights for Sustainable Digital Solutions"</a></li>
+						<li><a href="/speaker/catrinaallen">Catrina Allen</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/mollyfinkleton">"Powering Sustainable Digital Solutions with Renewable Energy"</a></li>
+						<li><a href="/speaker/mollyfinkleton">Molly Finkleton</a></li>
+					</div>
 				</article>
 			</section>
 		</div>
@@ -86,9 +110,9 @@ const {speaker} = Astro.props;
 				</article>
 						
 				<article>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">10:30 GMT 45 min</div>
+					<div class="grid-item-1"><li><a href="/speaker/mariadibiaggio">Maria di Biaggio</a></li></div>
+					<div class="grid-item-1"><li><a href="/speaker/biancazhang">Bianca Zhang</a></li></div>
+					<div class="grid-item-1"><li><a href="/speaker/saramuller">Sara Müller</a></li></div>
 				</article>
 
 			</section>
@@ -103,9 +127,9 @@ const {speaker} = Astro.props;
 							</article>
 							
 							<article>
-								<div class="grid-item-1_1">09:30 GMT 15 min</div>
-								<div class="grid-item-1">09:45 GMT 45 min</div>
-								<div class="grid-item-1">10:30 GMT 45 min</div>
+								<div class="grid-item-1_1"><li><a href="/speaker/amirsherman">Amir Sherman</a></li></div>
+								<div class="grid-item-1"><li><a href="/speaker/brunoramos">Bruno Ramos</a></li></div>
+								<div class="grid-item-1"><li><a href="/speaker/racheldelavega">Rachel de la Vega</a></li></div>
 							</article>
 							</section>
 							
@@ -118,8 +142,8 @@ const {speaker} = Astro.props;
 								</article>
 		
 								<article>
-									<div class="grid-item-1_1">09:30 GMT 15 min</div>
-									<div class="grid-item-1">09:45 GMT 45 min</div>
+									<div class="grid-item-1_1"><li><a href="/speaker/felipemarquez">Felipe Marquez</a></li></div>
+									<div class="grid-item-1"><li><a href="/speaker/alanmckenzie">Alan McKenzie</a></li></div>
 								</article>
 							</section>
 						</div>
@@ -254,6 +278,16 @@ const {speaker} = Astro.props;
   			text-align: left;
   			margin-left: -40%;
 		}
+
+		li {
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: #d2d2d2;
+		}
+
 		}
 			</style>
 			<script>
