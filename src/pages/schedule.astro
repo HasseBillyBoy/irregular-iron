@@ -4,7 +4,7 @@ import MainLayout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 
-const response = await fetch("https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/speakersntalks", {
+const response = await fetch("https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/speakersntalks?order=order.asc", {
 		method:"GET",
 		headers: {
 			apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoZmpwaGp6Z2F4d3ZtaWJveWhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYzMjEwNTAsImV4cCI6MjAxMTg5NzA1MH0.UcoT8cKIOL89hswLUhzwZsDdf-_Rrvusn-9O08NTxAI"
@@ -12,9 +12,8 @@ const response = await fetch("https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/s
 	const data = await response.json();
 	 console.log(data);
 
-const {speaker} = Astro.props;
-
 ---
+
 <MainLayout title="Schedule">
 
 	<details><summary>Debugger</summary>
@@ -38,7 +37,7 @@ const {speaker} = Astro.props;
 				</article>
 				
 				<article>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
+					<div class="grid-item-1"></div>
 					<div class="grid-item-1">09:45 GMT 45 min</div>
 					<div class="grid-item-1">10:30 GMT 45 min</div>
 				</article>
@@ -145,12 +144,11 @@ const {speaker} = Astro.props;
 				</li>
 			</ul>-->
 			<!-- <a href=`speaker/${speaker.slug}`>Singleview</a> -->
-			
+		
 
-	
 			{
 				data.map((product) => {
-				  return <Card  obj={product}/> ;
+				  return <Card  obj={product}/>
 				})
 			  }
 	

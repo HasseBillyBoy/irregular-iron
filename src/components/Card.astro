@@ -4,37 +4,30 @@ import "../css/generalstyle.css";
 const { obj } = Astro.props;
 ---
 
-<button data-modal-target="#modal">{obj.speakername}</button>
-    <div class="modal" id="modal"> 
-      <div class="modal-header">
-        <div class="title"></div>
-        <button data-close-button class="close-button">&times;</button>
-      </div>
-      <div class="grid1-2">
-        <div>
-          <img src={obj.speakerimage} alt="">
+<details>
+  <summary>
+    <h3>{obj.talktitle}</h3><h3>{obj.speakername}</h3></summary>
+    <article>
+      <div id="hej" class="grid1-2">
+        <div class="left">
+          <img src={obj.speakerimage} alt="profilbillede" />
           <h2>{obj.speakername}</h2>
           <h3>{obj.speakertitle}</h3>
         </div>
-        <div class="modal-body">
-          <h4><i>{obj.talktitle}</i></h4>
-          <h5>{obj.timeslot}</h5>
+        <div class="right">
+          <h4>{obj.talktitle}</h4>
+          <h5>{obj.nytimeslot}</h5>
           <p>{obj.talkdescription}</p>
         </div>
       </div>
-    </div>
-    <div id="overlay"></div>
+    </article>
+</details>
 
-<li class="link-card">
-		<h2>{obj.speakername}</h2>
-</li>
+  
+</a>
 
 <style>
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
+
 
 body {
   background-color: rgb(4, 39, 37);
@@ -50,7 +43,12 @@ img {
   border-radius: 50%;
 }
 
+details > summary {
+  list-style: none;
+}
+
 h2 {
+  font-family: 'Roboto-Regular';
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0px 10px;
@@ -59,6 +57,7 @@ h2 {
 }
 
 h3 {
+  font-family: 'Roboto-Regular';
   margin-top: 0px;
   padding: 0px 10px;
   font-size: 12px;
@@ -66,6 +65,7 @@ h3 {
 }
 
 h4 {
+  font-family: 'Roboto-Italic';
   margin-bottom: 0px;
   margin-top: 0px;
   font-size: 25px;
@@ -73,21 +73,23 @@ h4 {
 }
 
 h5 {
+  font-family: 'Ubuntu-Mono';
   margin-top: 0px;
   font-size: 14px;
   color: rgb(18, 179, 170);
 }
 
 p {
+  font-family: 'Roboto-Regular';
   color: #d2d2d2;
 }
 
-.modal {
+#hej {
   position: fixed;
   /* overlayet bliver i midten af vinduet hvis brugeren scroller */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(1);
   /* for at placere overlayet i midten, placerer vi først det venstre hjørne på boksen i centrum af skærmen.
   Derefter translater vi så det er midten på x-aksen og midten på y-aksen der skal være i centrum af skærmen. */
   transition: 200ms ease-in-out;
@@ -99,95 +101,19 @@ p {
   max-width: 80%;
 }
 
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
+.right {
+  padding: 20px 20px;
 }
 
-.modal-header {
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* border-bottom: 1px solid black; */
-}
-
-.modal-header .title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: rgb(255, 90, 67);
-}
-
-.modal-header .close-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: rgb(18, 179, 170);
-}
-
-.modal-body {
-  padding: 10px 15px;
-  font-size: 14px;
-  color: rgb(239, 239, 239);
-}
-
-#overlay {
-  position: fixed;
-  opacity: 0;
-  /*vises ikke pr default */
-  transition: 200ms ease-in-out;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-  /* overlay aktivt = du kan ikke interagere med baggrund */
-}
-
-#overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
 </style>
 
 <script>
-const openModalButtons = document.querySelectorAll("[data-modal-target]");
-const closeModalButtons = document.querySelectorAll("[data-close-button]");
-const overlay = document.getElementById("overlay");
-
-openModalButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = document.querySelector(button.dataset.modalTarget);
-    openModal(modal);
+  document.querySelectorAll("h3").forEach((element) => {
+    element.addEventListener("click", popup);
   });
-});
 
-overlay.addEventListener("click", () => {
-  const modals = document.querySelectorAll(".modal.active");
-  modals.forEach((modal) => {
-    closeModal(modal);
-  });
-});
-
-closeModalButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = button.closest(".modal");
-    closeModal(modal);
-  });
-});
-
-function openModal(modal) {
-  if (modal == null) return;
-  modal.classList.add("active");
-  overlay.classList.add("active");
-}
-
-function closeModal(modal) {
-  if (modal == null) return;
-  modal.classList.remove("active");
-  overlay.classList.remove("active");
-}
+  function popup() {
+    console.log(this.nextElementSibling);
+    this.nextElementSibling.classList.toggle("hide");
+  }
 </script>
