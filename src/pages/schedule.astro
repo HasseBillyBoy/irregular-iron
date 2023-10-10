@@ -4,7 +4,7 @@ import MainLayout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 
-const response = await fetch("https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/speakersntalks", {
+const response = await fetch("https://jhfjphjzgaxwvmiboyhj.supabase.co/rest/v1/speakersntalks?order=order.asc", {
 		method:"GET",
 		headers: {
 			apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoZmpwaGp6Z2F4d3ZtaWJveWhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYzMjEwNTAsImV4cCI6MjAxMTg5NzA1MH0.UcoT8cKIOL89hswLUhzwZsDdf-_Rrvusn-9O08NTxAI"
@@ -38,9 +38,18 @@ const {speaker} = Astro.props;
 				</article>
 				
 				<article>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">10:30 GMT 45 min</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/nathaniellombardy">"Content and Sustainability: Crafting Engaging, Eco-Friendly Narratives"</a></li>
+						<li><a href="/speaker/jacobbenjamin"><span class="triangle">&#x25B8</span> Jacob Benjamin</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/liyu">"How Might We Calculate Digital Emissions?"</a></li>
+						<li><a href="/speaker/liyu"><span class="triangle">&#x25B8</span> Dr. Li Yu</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/simonedevantier">"Sustainable Website Fonts and The Proper Use of Them"</a></li>
+						<li><a href="/speaker/simonedevantier"><span class="triangle">&#x25B8</span> Simone Devantier</a></li>
+					</div>
 				</article>
 			</section>
 				
@@ -54,9 +63,18 @@ const {speaker} = Astro.props;
 				</article>
 					
 				<article>
-					<div class="grid-item-1_1">09:30 GMT 15 min</div>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">10:30 GMT 45 min</div>
+					<div class="grid-item-1_1">
+						<li><a href="/speaker/nathaniellombardy"></a>"Green Code: Engineering a Sustainable Software Ecosystem"</a></li>
+						<li><a href="/speaker/nathaniellombardy"><span class="triangle">&#x25B8</span> Nathaniel Lombardy</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/mileswise">"Designing User-Centric Sustainable Experiences: Best Practices"</a></li>
+						<li><a href="/speaker/mileswise"><span class="triangle">&#x25B8</span> Miles Wise</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/ivanazavala">"Ethical Considerations in Sustainable Digital Design"</a></li>
+						<li><a href="/speaker/ivanazavala"><span class="triangle">&#x25B8</span> Ivana Zavala</a></li>
+					</div>
 				</article>
 			</section>
 				
@@ -69,8 +87,14 @@ const {speaker} = Astro.props;
 				</article>
 
 				<article>
-					<div class="grid-item-1_1">09:30 GMT 15 min</div>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
+					<div class="grid-item-1_1">
+						<li><a href="/speaker/catrinaallen">"Data-Driven Insights for Sustainable Digital Solutions"</a></li>
+						<li><a href="/speaker/catrinaallen"><span class="triangle">&#x25B8</span> Catrina Allen</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/mollyfinkleton">"Powering Sustainable Digital Solutions with Renewable Energy"</a></li>
+						<li><a href="/speaker/mollyfinkleton"><span class="triangle">&#x25B8</span> Molly Finkleton</a></li>
+					</div>
 				</article>
 			</section>
 		</div>
@@ -86,9 +110,18 @@ const {speaker} = Astro.props;
 				</article>
 						
 				<article>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">09:45 GMT 45 min</div>
-					<div class="grid-item-1">10:30 GMT 45 min</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/mariadibiaggio">"Embedding Sustainability into Digital Design: A Strategic Approach"</a></li>
+						<li><a href="/speaker/mariadibiaggio"><span class="triangle">&#x25B8</span> Maria di Biaggio</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/biancazhang">"Creating a Culture of Sustainability in the Digital Design Industry"</a></li>
+						<li><a href="/speaker/biancazhang"><span class="triangle">&#x25B8</span> Bianca Zhang</a></li>
+					</div>
+					<div class="grid-item-1">
+						<li><a href="/speaker/saramuller">"Measuring the Environmental Impact of Digital Products"</a></li>
+						<li><a href="/speaker/saramuller"><span class="triangle">&#x25B8</span> Sara Müller</a></li>
+					</div>
 				</article>
 
 			</section>
@@ -103,9 +136,18 @@ const {speaker} = Astro.props;
 							</article>
 							
 							<article>
-								<div class="grid-item-1_1">09:30 GMT 15 min</div>
-								<div class="grid-item-1">09:45 GMT 45 min</div>
-								<div class="grid-item-1">10:30 GMT 45 min</div>
+								<div class="grid-item-1_1">
+									<li><a href="/speaker/amirsherman">"Coding for a Greener Web: Techniques and Tools"</a></li>
+									<li><a href="/speaker/amirsherman"><span class="triangle">&#x25B8</span> Amir Sherman</a></li>
+								</div>
+								<div class="grid-item-1">
+									<li><a href="/speaker/brunoramos">"Closing the Loop: Sustainable Digital Design in a Circular Economy"</a></li>
+									<li><a href="/speaker/brunoramos"><span class="triangle">&#x25B8</span> Bruno Ramos</a></li>
+								</div>
+								<div class="grid-item-1">
+									<li><a href="/speaker/racheldelavega">"Crunching Numbers for a Greener Future: Leveraging Data for Sustainability in Digital Design"</a></li>
+									<li><a href="/speaker/racheldelavega"><span class="triangle">&#x25B8</span> Rachel de la Vega</a></li>
+								</div>
 							</article>
 							</section>
 							
@@ -118,8 +160,14 @@ const {speaker} = Astro.props;
 								</article>
 		
 								<article>
-									<div class="grid-item-1_1">09:30 GMT 15 min</div>
-									<div class="grid-item-1">09:45 GMT 45 min</div>
+									<div class="grid-item-1_1">
+										<li><a href="/speaker/felipemarquez">"From Concept to Market: Integrating Sustainability in Product Development"</a></li>
+										<li><a href="/speaker/felipemarquez"><span class="triangle">&#x25B8</span> Felipe Marquez</a></li>
+									</div>
+									<div class="grid-item-1">
+										<li><a href="/speaker/alanmckenzie">"How to Use Color for Sustainable Commercial Design"</a></li>
+										<li><a href="/speaker/alanmckenzie"><span class="triangle">&#x25B8</span> Alan McKenzie</a></li>
+									</div>
 								</article>
 							</section>
 						</div>
@@ -195,10 +243,12 @@ const {speaker} = Astro.props;
 			color: #12b3aa;
 		}
 		.grid_1-1{
+			font-family: 'Ubuntu-Mono';
 			display: grid;
   			grid-template-columns: auto auto;
 		}
 		.grid-item, .grid-item_1{
+			font-family: 'Ubuntu-Mono';
   			background-color: rgb(4, 39, 37);
 			color: #d2d2d2;
 			border-bottom: 1px solid #565656;
@@ -223,6 +273,7 @@ const {speaker} = Astro.props;
 			border-top: 1px solid #565656;
 		}
 		.clock{
+			font-family: 'Roboto-Mono';
 			color: #12b3aa;
 		}
 		@media (min-width: 900px){
@@ -254,6 +305,22 @@ const {speaker} = Astro.props;
   			text-align: left;
   			margin-left: -40%;
 		}
+
+		li {
+			list-style: none;
+		}
+
+		a {
+			font-family: 'Roboto-Regular';
+			text-decoration: none;
+			color: #d2d2d2;
+		}
+
+		.triangle {
+			color: rgb(255, 90, 67);
+			font-family: 'Ubuntu-Mono';
+		}
+
 		}
 			</style>
 			<script>
