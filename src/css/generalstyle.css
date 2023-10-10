@@ -8,6 +8,11 @@ html {
 /* import af fonts */
 
 @font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
   font-family: "Roboto-Italic";
   src: url("../fonts/Roboto/Roboto-Italic.ttf");
 }
