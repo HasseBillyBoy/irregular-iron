@@ -1,7 +1,7 @@
 ---
-import Button from "./Button.astro";
+import Buttons from "./Buttons.astro";
 import Nav from "../components/Nav.astro";
-const { imgsrc, conf, tema, dato, ticketbutton } = Astro.props;
+
 ---
 
 <section>
@@ -9,7 +9,9 @@ const { imgsrc, conf, tema, dato, ticketbutton } = Astro.props;
   <h3>Conference</h3>
   <h1>DEGROWTH & CONSUMERISM</h1>
   <h2>March 20 - 21, 2024</h2>
-  <h4>BUY TICKETS</h4>
+  <div>
+    <Buttons buttontext="BUY TICKETS"/>
+  </div>
 </section>
 
 <style>
@@ -21,6 +23,10 @@ const { imgsrc, conf, tema, dato, ticketbutton } = Astro.props;
     background-size: cover;
     background-position-y: bottom;
     aspect-ratio: 16/9;
+  }
+  div {
+    text-align: center;
+    margin: 3%;
   }
   h1 {
     color: #ff5a43;
