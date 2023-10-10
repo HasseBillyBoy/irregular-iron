@@ -1,5 +1,6 @@
 ---
-const { aboutus, text } = Astro.props;
+import Buttons from "../components/Buttons.astro";
+
 ---
 <div>
 <h2>More than a conference!</h2>
@@ -9,11 +10,21 @@ const { aboutus, text } = Astro.props;
   insights. At our 'Degrowth and Consumerism' conference, we will confront the
   urgent need for change and explore a sustainable way forward for our industry.
 </p>
+<div class="buttons">
+<Buttons buttontext="Schedule" buttonlink="schedule"/>
+<Buttons buttontext="Speakers"/>
+</div>
 </div>
 <style>
 
 div {
-        padding-left: 4%;
+       /* padding-left: 2%;*/
+    }
+
+    .buttons {
+      display: flex;
+      gap: 2rem;
+      
     }
   h2 {
     font-family: "RobotoCondensed-Regular";
@@ -25,7 +36,7 @@ div {
     font-family: "Roboto-Regular";
     color: #d2d2d2;
     font-size: 25px;
-    max-width: 35ch;
+    max-width: 30ch;
     line-height: 30px;
   }
 
