@@ -3,7 +3,7 @@ import "../css/generalstyle.css";
 ---
 
 <section class="footer_ux">
-    <article>
+    <article class="contact">
         <h4>Contact</h4>
         <ul>
             <li><a href="#">UX Copenhagen - hello@uxcopenhagen.com</a></li>
@@ -18,10 +18,10 @@ import "../css/generalstyle.css";
         <p>E2023</p>
     </article>
 
-    <article>
+    <article class="sponsor_list">
         <h4>Sponsor</h4>
-        <a href="https://duckwise.dk"><img src="/duckwise.webp" alt="sponsor"></a>
         <a href="https://www.stickermule.com"><img src="/stickermule.webp" alt="sponsor"></a>
+        <a href="https://duckwise.dk"><img src="/duckwise.webp" alt="sponsor"></a><br>
         <a href="https://imotions.com"><img src="/imotions.webp" alt="sponsor"></a>
         <a href="https://www.e-conomic.dk"><img src="/economic.webp" alt="sponsor"></a>
     </article>
@@ -34,24 +34,61 @@ import "../css/generalstyle.css";
     grid-template-columns: 1fr 1fr 1fr;
     background-color: #031716;
     margin-top: 100px;
-    list-style:none;
 }
 .footer_ux h4, a, p{
-    color: white;
-    padding: 0px;
-    margin-left: -1px;
+    color: #D2D2D2;
+    font-family: "RobotoCondensed-Regular";
+    text-decoration:none;
 }
-.footer_ux h4{
+.footer_ux h4, .sponsor_list h4{
     text-align: center;
+    font-size: 12px;
+    color: #12b3aa;
 }
 .footer_ux ul{
     list-style: none;
+    font-size: 10px;
+    line-height: 20px;
 }
-.footer a{
+.footer_ux p{
+    font-size: 10px;
+    text-align: center;
+}
+.sponsor_list img{
+    width: 25%;
+    padding-top: 4px;
+    padding-right: 0px;
+    padding-bottom: 8px;
+    padding-left: 25px;
+}
+.contact h4{
     text-align: left;
-    font-family:
+    margin-left: 38px;
 }
-.footer p{
-    
+@media (min-width: 900px){
+    .footer_ux h4, .sponsor_list h4{
+    font-size: 16px;
+}
+.footer_ux ul{
+    font-size: 12px;
+    line-height: 30px;
+    margin-left: 70px;
+}
+.contact h4{
+    text-align: left;
+    margin-left: 108px;
+}
+.footer_ux p{
+    font-size: 12px;
+}
+.sponsor_list img{
+    width: 16%;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+}
+.sponsor_list h4{
+    margin-left: -30px;
+}
 }
 </style>
