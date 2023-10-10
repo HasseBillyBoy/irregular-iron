@@ -7,42 +7,59 @@ import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
 import Info from "../components/Info.astro";
 import Morethanaconference from "../components/Morethanaconference.astro";
-import Background from "../components/Background.astro";
+import Buttons from "../components/Buttons.astro";
 ---
 
 <MainLayout title="LandingPage">
-  
-
-	<header>
-
-  </header>
+  <header></header>
 
   <main>
-	<!-- <Background/> -->
-	<Banner/>
-   <section>
-    
-      
+    <!-- <Background/> -->
+    <Banner />
+    <section>
       <!-- en button-komponent -->
       <!-- nedad pil - som knap? -->
     </section>
     <section class="grid_1-1">
       <Info />
-	  <Morethanaconference />
+      <Morethanaconference />
     </section>
-	<Footer />
+    <Footer />
   </main>
-
 </MainLayout>
 
 <style>
-	.grid_1-1 {
+  .grid_1-1 {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  /*.grid_1-1 {
   display: grid;
   gap: 2em;
   grid-template-columns: 1fr 1fr;
   grid-column: auto;
  /* margin-top: 1em;
   margin-bottom: 1em;
-  margin-right: 2em;*/
-}
+  margin-right: 2em;
+}*/
+
+  @font-face {
+    font-family: "Roboto-Italic";
+    src: url("../fonts/Roboto/Roboto-Italic.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: url("../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Roboto-Mono";
+    src: url("../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Ubuntu-Mono";
+    src: url("../fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf");
+  }
 </style>
