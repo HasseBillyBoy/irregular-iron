@@ -2,7 +2,45 @@
 import "../css/generalstyle.css";
 ---
 
+<section class="footer_ux">
+    <article>
+        <h4>Contact</h4>
+        <ul>
+            <li><a href="#">UX Copenhagen - hello@uxcopenhagen.com</a></li>
+            <li><a href="#">UX STUDIO - hellemartens.com</a></li>
+            <li><a href="#">Newsletter</a></li>
+        </ul>
+    </article>
+
+    <article>
+        <h4>&copy Gruppe 2</h4>
+        <p>KEA - MMD 2. SEM.</p>
+        <p>E2023</p>
+    </article>
+
+    <article>
+        <h4>Sponsor</h4>
+        <a href="https://duckwise.dk"><img src="/logo-ux.webp" alt="sponsor"></a>
+        <a href="https://www.stickermule.com"><img src="/logo-ux.webp" alt="sponsor"></a>
+        <a href="https://imotions.com"><img src="/logo-ux.webp" alt="sponsor"></a>
+        <a href="https://www.e-conomic.dk"><img src="/logo-ux.webp" alt="sponsor"></a>
+    </article>
+</section>
 
 <style>
 
+.footer_ux {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #031716;
+    margin-top: 100px;
+    list-style:none;
+}
+.footer_ux h4, a, p{
+    color: white;
+    margin-left: 10px;
+}
+.footer_ux ul{
+    list-style: none;
+}
 </style>
