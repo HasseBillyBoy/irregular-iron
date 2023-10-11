@@ -1,32 +1,74 @@
 ---
-const { aboutus, text } = Astro.props;
+import Buttons from "../components/Buttons.astro";
 ---
+
 <div>
-<h2>More than a conference!</h2>
-<p>
-  Denmark's premier conference on UX. Join us for two days of enriching talks by
-  20+ global speakers, interactive workshops, networking, and invaluable
-  insights. At our 'Degrowth and Consumerism' conference, we will confront the
-  urgent need for change and explore a sustainable way forward for our industry.
-</p>
+  <h2>More than a conference!</h2>
+  <p>
+    Denmark's premier conference on UX. Join us for two days of enriching talks
+    by 20+ global speakers, interactive workshops, networking, and invaluable
+    insights. At our 'Degrowth and Consumerism' conference, we will confront the
+    urgent need for change and explore a sustainable way forward for our
+    industry.
+  </p>
+  <br />
+  <div class="buttons">
+    <Buttons buttontext="Schedule" buttonlink="schedule" />
+    <Buttons buttontext="Speakers" />
+  </div>
 </div>
 <style>
+  div {
+    /* padding-left: 2%;*/
+    margin-left: 10%;
+  }
 
-div {
-        
-       
-        padding-left: 1%;
-    }
+  .buttons {
+    display: flex;
+    gap: 2rem;
+    margin-left: -2%;
+   
+  }
   h2 {
+    font-family: "RobotoCondensed-Regular";
     color: #d2d2d2;
     font-size: 30px;
+    
   }
 
   p {
+    font-family: "Roboto-Regular";
     color: #d2d2d2;
-    font-size: 25px;
-    max-width: 35ch;
-    line-height: 30px;
+    font-size: 20px;
+    max-width: 40ch;
+    line-height: 40px;
+    
   }
 
+  @media (max-width: 900px){ 
+    div {
+     
+  }
+
+  .buttons {
+    display: flex;
+    gap: 2rem;
+    
+  }
+  h2 {
+    font-family: "RobotoCondensed-Regular";
+    color: #d2d2d2;
+    font-size: 16px;
+    
+  }
+
+  p {
+    font-family: "Roboto-Regular";
+    color: #d2d2d2;
+    font-size: 12px;
+    max-width: 40ch;
+    line-height: 40px;
+   
+  }
+  }
 </style>
