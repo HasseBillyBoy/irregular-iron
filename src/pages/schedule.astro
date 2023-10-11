@@ -194,6 +194,7 @@ const {speaker} = Astro.props;
 
 	</body>
 	<style>
+		/* ------------- mobile first ------------*/
 		h1, h2 {
 			color: rgb(255, 90, 67);
 			text-align: center;
@@ -204,13 +205,16 @@ const {speaker} = Astro.props;
 			font-size: 20px;
 			padding: 20px;
 			background-color: #031716;
-		}		
+		}	
+
 		.accordion {
+			display: block;
+			margin: 0 auto;
 			background-color:  rgb(4, 39, 37);
 			color: rgb(255, 90, 67);
 			cursor: pointer;
 			padding: 30px;
-			width: 100%;
+			width: 80%;
 			text-align: center;
 			border: 2px solid #d2d2d2;
 			border-radius: 10px;
@@ -219,83 +223,49 @@ const {speaker} = Astro.props;
 			transition: 0.2s;
 			font-size: 18px;
 		}
-		.accordion:hover {
-			opacity: 0.5;
-		}
+
 		.panel {
-			background-color:  #031716;
+			display: block;
+			margin: 0 auto;
+			background-color: #031716;
 			max-height: 0;
 			overflow: hidden;
 			transition: max-height 0.2s ease-out;
 		}
+
 		.symbol{
 			color: #12b3aa;
 		}
-		.grid_1-1{
-			font-family: 'Ubuntu-Mono';
-			display: grid;
-  			grid-template-columns: auto auto;
-		}
-		.grid-item, .grid-item_1{
-			font-family: 'Ubuntu-Mono';
-  			background-color: rgb(4, 39, 37);
-			color: #d2d2d2;
-			border-bottom: 1px solid #565656;
-  			padding: 25px;
-  			font-size: 14px;
-			text-align: left;
-		}
-		.grid-item-1, .grid-item-1_1{
-  			background-color: rgb(4, 39, 37);
-			color: #D2D2D2;
-			border-bottom: 1px solid #565656;
-			border-left: 1px solid #565656;
-			padding: 25px;
-  			font-size: 14px;
-  			text-align: left;
-  			margin-left: -10%;
-		}
-		.grid-item_1{ 
-			border-top: 1px solid #565656;
-		}
-		.grid-item-1_1{
-			border-top: 1px solid #565656;
-		}
+
 		.clock{
 			font-family: 'Roboto-Mono';
 			color: #12b3aa;
 		}
-		@media (min-width: 900px){
+
+		/* ------------- media query til desktop ------------*/
+
+		@media (min-width: 900px){ 
+
+
 		h1, h2 {
 			font-size: 50px;
 		}
 		h2 {
-			font-size: 20px; !!!!!!
+			font-size: 20px;
 		}	
 		.accordion {
 			display: block;
 			margin: 0 auto;
 			padding: 30px;
 			width: 20%;
-			border: 2px solid #d2d2d2;
 			font-size: 22px;
+			margin-bottom: 50px;
 		}
-		.panel{
-			width: 90%;
-			margin-left: 5%;
-		}
-			
-		.grid-item, .grid-item_1{
-  			padding: 34.7px;
-  			font-size: 18px;
-			text-align: left;
-			word-spacing: 15px;
-			margin-right: -10%; 
-		}
-		.grid-item-1, .grid-item-1_1{
-  			font-size: 18px;
-  			text-align: left;
-			margin-left: 5%; 
+
+		.panel {
+			display: block;
+			margin: 0 auto;
+			width: 80%;
 		}
 
 		li {
@@ -314,6 +284,10 @@ const {speaker} = Astro.props;
 		}
 
 		.nytgrid {
+			display: block;
+			margin: 0 auto;
+			padding: 30px;
+			width: 80%;
 			background-color: #042725;
 			font-family: 'Ubuntu-Mono';
 			color: #d2d2d2;
@@ -334,6 +308,7 @@ const {speaker} = Astro.props;
 
 		}
 			</style>
+
 			<script>
 				var acc = document.getElementsByClassName("accordion");
 				var i;
