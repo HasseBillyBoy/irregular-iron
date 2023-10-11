@@ -21,7 +21,7 @@ const { header, important, infotext } = Astro.props;
 
 <style>
   article {
-    /* padding-left: 20%;*/
+  
   }
   h2 {
     font-family: "RobotoCondensed-Regular";
@@ -46,5 +46,35 @@ const { header, important, infotext } = Astro.props;
   .divider {
     border-top: 1px solid #efefef;
     width: 440px;
+  }
+  @media (max-width: 900px){
+    article {
+   margin-left: 10%;
+   margin-bottom: 15%;
+    }
+    h2 {
+    font-family: "RobotoCondensed-Regular";
+    color: #d2d2d2;
+    font-size: 16px;
+  }
+
+  h3 {
+    color: #ff5a43;
+    font-family: "Roboto-Mono";
+    font-size: 12px;
+    word-spacing: 10px;
+    line-height: 40px;
+  }
+
+  p {
+    font-family: "Roboto-Mono";
+    color: #12b3aa;
+    font-size: 12px;
+  }
+
+  .divider {
+    border-top: 1px solid #efefef;
+    width: 315px;
+  }
   }
 </style>
