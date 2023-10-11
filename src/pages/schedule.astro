@@ -1,6 +1,7 @@
 ---
 import "../css/generalstyle.css";
 import MainLayout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 
@@ -16,6 +17,8 @@ const {speaker} = Astro.props;
 
 ---
 <MainLayout title="Schedule">
+
+	<Nav />
 
 	<details><summary>Debugger</summary>
 		<debug {data} />
@@ -35,7 +38,7 @@ const {speaker} = Astro.props;
 			<article class="nytgrid">
 				<div class="divleft">09:30 <span class="clock">GMT</span> &nbsp 30 <span class="clock">min</span></div>
 				<div class="divright">
-					<div class="talk"><li><a href="/speaker/nathaniellombardy">"Content and Sustainability: Crafting Engaging, Eco-Friendly Narratives"</a></li></div>
+					<div class="talk"><li><a href="/speaker/jacobbenjamin">"Content and Sustainability: Crafting Engaging, Eco-Friendly Narratives"</a></li></div>
 					<div class="speaker"><li><a href="/speaker/jacobbenjamin"><span class="triangle">&#x25B8</span> Jacob Benjamin</a></li></div>
 				</div>
 			</article>	
@@ -75,7 +78,7 @@ const {speaker} = Astro.props;
 			<article class="nytgrid">
 				<div class="divleft">13:30 <span class="clock">GMT</span> &nbsp 30 <span class="clock">min</span></div>
 				<div class="divright">
-					<div class="talk"><li><a href="/speaker/ivanazala">"Ethical Considerations in Sustainable Digital Design"</a></li></div>
+					<div class="talk"><li><a href="/speaker/ivanazavala">"Ethical Considerations in Sustainable Digital Design"</a></li></div>
 					<div class="speaker"><li><a href="/speaker/ivanazavala"><span class="triangle">&#x25B8</span> Ivana Zavala</a></li></div>
 				</div>
 			</article>
@@ -172,29 +175,11 @@ const {speaker} = Astro.props;
 				</article>
 			</section>
 		</div>	
+
+		<Footer />
 		
-				<!--
-				<ul>
-					<li><a href="/speaker/alanmckenzie">Alan McKenzie</a></li>
-					<li><a href="/speaker/amirsherman">Amir Sherman</a></li>
-					<li><a href="/speaker/biancazhang">Bianca Zhang</a></li>
-					<li><a href="/speaker/brunoramos">Bruno Ramos</a></li>
-					<li><a href="/speaker/catrinaallen">Catrina Allen</a></li>
-					<li><a href="/speaker/felipemarquez">Felipe Marquez</a></li>
-					<li><a href="/speaker/ivanazavala">Ivana Zavala</a></li>
-					<li><a href="/speaker/jacobbenjamin">Jacob Benjamin</a></li>
-					<li><a href="/speaker/liyu">Dr. Li Yu</a></li>
-					<li><a href="/speaker/mariadibiaggio">Maria Di Biaggio</a></li>
-					<li><a href="/speaker/mileswise">Miles Wise</a></li>
-					<li><a href="/speaker/mollyfinkleton">Molly Finkleton</a></li>
-					<li><a href="/speaker/nathaniellombardy">Nathaniel Lombardy</a></li>
-					<li><a href="/speaker/racheldelavega">Rachel de la Vega</a></li>
-					<li><a href="/speaker/saramuller">Sara Müller</a></li>
-					<li><a href="/speaker/simonedevantier">Simone Devantier</a></li>
-				</li>
-			</ul>-->
-			<!-- <a href=`speaker/${speaker.slug}`>Singleview</a> -->
-			
+				<!-- vi fandt aldrig ud af hvordan vi kunne linke til en slug 
+					 <a href=`speaker/${speaker.slug}`>Singleview</a> -->
 
 	
 			{
@@ -202,8 +187,11 @@ const {speaker} = Astro.props;
 				  return <Card  obj={product}/> ;
 				})
 			  }
-	
+
+			  
+
 		</main>
+
 	</body>
 	<style>
 		h1, h2 {
