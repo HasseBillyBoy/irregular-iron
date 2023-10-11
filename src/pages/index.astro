@@ -8,6 +8,7 @@ import Banner from "../components/Banner.astro";
 import Info from "../components/Info.astro";
 import Morethanaconference from "../components/Morethanaconference.astro";
 import Buttons from "../components/Buttons.astro";
+import ScrollDown from "../components/ScrollDown.astro";
 ---
 
 <MainLayout title="LandingPage">
@@ -18,9 +19,10 @@ import Buttons from "../components/Buttons.astro";
     <Banner />
     <section>
       <!-- en button-komponent -->
-      <!-- nedad pil - som knap? -->
+      <!-- scroll down knap-->
+      <ScrollDown />
     </section>
-    <section class="grid_1-1">
+    <section class="grid_1-1" id="anchor">
       <Info />
       <Morethanaconference />
     </section>
@@ -29,7 +31,7 @@ import Buttons from "../components/Buttons.astro";
 </MainLayout>
 
 <style>
-  main{
+  main {
     width: 100%;
   }
   .grid_1-1 {
